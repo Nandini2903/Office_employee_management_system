@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Remove Employee</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #fff5f5;
+        }
+        .container {
+            background: linear-gradient(to right, #ff9a9e, #fecfef);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            margin-top: 50px;
+        }
+        h1 {
+            color: #343a40;
+            margin-bottom: 30px;
+            text-shadow: 2px 2px #ff6b81;
+        }
+        .dropdown-toggle {
+            background-color: #ff6b81;
+            border-color: #ff6b81;
+        }
+        .dropdown-toggle:hover {
+            background-color: #ff4f67;
+            border-color: #ff4f67;
+        }
+        .dropdown-menu a {
+            color: #343a40;
+        }
+        .dropdown-menu a:hover {
+            background-color: #ff4f67;
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Remove An Employee</h1>
+        <hr>
+        <div class="dropdown">
+            <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Choose Employee To Be Removed
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                {% for emp in emps %}
+                <a class="dropdown-item" href="/remove_emp/{{ emp.id }}">{{ emp.first_name }} {{ emp.last_name }}</a>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
+
